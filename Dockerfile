@@ -9,6 +9,10 @@ ENV PYTHONDONTWRITEBYTECODE=1
 # Turns off buffering for easier container logging
 ENV PYTHONUNBUFFERED=1
 
+# Install custom pymazda version
+COPY lib/pymazda-0.3.11.post1-py3-none-any.whl /tmp/
+RUN pip install /tmp/pymazda-0.3.11.post1-py3-none-any.whl && rm /tmp/pymazda-0.3.11.post1-py3-none-any.whl
+
 # Install pip requirements
 COPY requirements.txt .
 RUN python -m pip install -r requirements.txt
