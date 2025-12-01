@@ -8,3 +8,7 @@ services:
       dockerfile: ./Dockerfile
     ports:
       - 5001:5001
+    environment:
+      - USERNAME=${MYMAZDA_USERNAME}
+      - PASSWORD=${MYMAZDA_PASSWORD}
+      - REGION=${MYMAZDA_REGION}
